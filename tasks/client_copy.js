@@ -9,7 +9,7 @@ module.exports = function(singleRun, callback) {
     let gulpStream = gulp.src(config.source);
 
     if (!singleRun) {
-      let clientWatch = watch(config.source, {verbose: true});
+      let clientWatch = watch(config.source, { verbose: true });
 
       if (callback) {
         clientWatch.on('change', function(fileName) {
@@ -18,15 +18,14 @@ module.exports = function(singleRun, callback) {
       }
 
       gulpStream.pipe(clientWatch);
-    }
-    else {
+    } else {
       gulpStream.pipe(deleteLines({
-        'filters': [
-          /livereload/i
-        ]
+        filters: [
+          '/livereload/i',
+        ],
       }));
     }
 
     return gulpStream.pipe(gulp.dest(config.destination));
-  }
+  };
 };

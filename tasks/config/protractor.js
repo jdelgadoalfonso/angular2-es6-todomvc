@@ -8,14 +8,14 @@ exports.config = {
 
   seleniumServerJar: findSeleniumJar(),
 
-  useAllAngular2AppRoots: true
+  useAllAngular2AppRoots: true,
 };
 
 function findSeleniumJar() {
   var dir = './node_modules/protractor/selenium';
 
   var files = fs.readdirSync(dir);
-  var jar = files.filter(function (file) {
+  var jar = files.filter(function(file) {
     return /\.jar$/.test(file);
   })[0];
 

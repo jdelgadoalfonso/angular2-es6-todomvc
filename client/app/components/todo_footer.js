@@ -7,7 +7,7 @@ import todoFooterTemplate from './todo_footer.html';
 @Component({
   selector: 'todo-footer',
   template: todoFooterTemplate,
-  directives: [ROUTER_DIRECTIVES]
+  directives: [ROUTER_DIRECTIVES],
 })
 export class TodoFooter {
   constructor(todoStore: TodoLocalStore, params: RouteParams) {

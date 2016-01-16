@@ -6,7 +6,7 @@ import todoItemTemplate from './todo_item.html';
 @Component({
   selector: 'todo-item',
   template: todoItemTemplate,
-  pipes: [TrimPipe]
+  pipes: [TrimPipe],
 })
 export class TodoItem {
   @Input()
@@ -30,8 +30,7 @@ export class TodoItem {
 
     if (this.todo.title.length === 0) {
       this.remove();
-    }
-    else {
+    } else {
       this.update();
     }
   }

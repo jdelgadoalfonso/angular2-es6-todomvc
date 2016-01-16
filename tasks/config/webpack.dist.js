@@ -1,6 +1,6 @@
 'use strict';
 let webpack = require('webpack');
-let ExtractTextPlugin = require("extract-text-webpack-plugin");
+let ExtractTextPlugin = require('extract-text-webpack-plugin');
 let config = require('./webpack');
 
 config.plugins = [
@@ -8,14 +8,14 @@ config.plugins = [
     'vendor', 'vendor.js'
   ),
   new webpack.DefinePlugin({
-    ENVIRONMENT: JSON.stringify('production')
+    ENVIRONMENT: JSON.stringify('production'),
   }),
   new webpack.optimize.UglifyJsPlugin({
     minimize: true,
     mangle: false,
-    comments: false
+    comments: false,
   }),
-  new ExtractTextPlugin("[name].css")
+  new ExtractTextPlugin('[name].css'),
 ];
 
 module.exports = config;

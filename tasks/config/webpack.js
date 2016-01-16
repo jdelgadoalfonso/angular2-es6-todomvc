@@ -1,17 +1,17 @@
 'use strict';
 let path = require('path');
 let webpack = require('webpack');
-let ExtractTextPlugin = require("extract-text-webpack-plugin");
+let ExtractTextPlugin = require('extract-text-webpack-plugin');
 let config = require('./index').client;
 
 module.exports = {
   entry: {
     boot: './client/boot.js',
-    vendor: './client/vendor.js'
+    vendor: './client/vendor.js',
   },
   output: {
     path: path.resolve(__dirname, '../../', config.destination),
-    filename: '[name].js'
+    filename: '[name].js',
   },
   module: {
     loaders: [
@@ -25,35 +25,35 @@ module.exports = {
             'angular2-annotations',
             'transform-decorators-legacy',
             'transform-class-properties',
-            'transform-flow-strip-types'
-          ]
-        }
+            'transform-flow-strip-types',
+          ],
+        },
       },
       {
         test: /\.html$/,
-        loader: "html?minimize=false"
+        loader: 'html?minimize=false',
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style', 'css')
-      }
-    ]
+        loader: ExtractTextPlugin.extract('style', 'css'),
+      },
+    ],
   },
 
   resolve: {
     root: __dirname,
-    extensions: ['','.js','.json']
+    extensions: ['', '.js', '.json'],
   },
 
   plugins: [
     new webpack.DefinePlugin({
-      ENVIRONMENT: JSON.stringify('development')
+      ENVIRONMENT: JSON.stringify('development'),
     }),
     new webpack.optimize.CommonsChunkPlugin(
       'vendor', 'vendor.js'
     ),
-    new ExtractTextPlugin("[name].css")
+    new ExtractTextPlugin('[name].css'),
   ],
 
-  devtool: 'source-map'
+  devtool: 'source-map',
 };

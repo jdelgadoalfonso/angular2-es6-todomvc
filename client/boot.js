@@ -11,8 +11,9 @@ import {App} from './app/components/app';
 if (ENVIRONMENT == 'production') {
   enableProdMode();
 }
+
 bootstrap(App, [
   TodoLocalStore,
   ROUTER_PROVIDERS,
-  provide(LocationStrategy, { useClass: HashLocationStrategy })
+  provide(LocationStrategy, { useClass: HashLocationStrategy }),
 ]);

@@ -24,7 +24,7 @@ export class TodoLocalStore {
   constructor() {
     let persistedTodos = JSON.parse(localStorage.getItem('angular2-todos')) || [];
 
-    this.todos = persistedTodos.map( (todo) => {
+    this.todos = persistedTodos.map((todo) => {
       let ret = new Todo(todo.title);
       ret.completed = todo.completed;
       ret.uid = todo.uid;
@@ -46,7 +46,7 @@ export class TodoLocalStore {
   }
 
   removeCompleted() {
-    this.todos = this.get({completed: false});
+    this.todos = this.get({ completed: false });
     this.persist();
   }
 

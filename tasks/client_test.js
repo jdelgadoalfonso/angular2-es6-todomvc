@@ -10,7 +10,7 @@ module.exports = function(singleRun) {
     let server = new KarmaServer({
       configFile: configPath,
       singleRun: singleRun,
-      autoWatch: !singleRun
+      autoWatch: !singleRun,
     }, done);
     server.start();
   }

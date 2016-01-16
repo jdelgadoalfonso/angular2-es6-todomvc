@@ -12,27 +12,25 @@ module.exports = function(singleRun, callback) {
 
     let callbackOnBuild = function(err, stats) {
       if (err) {
-        throw new util.PluginError("webpack:error", err);
+        throw new util.PluginError('webpack:error', err);
       }
 
       let statistics = stats.toJson({
         children: false,
         source: false,
         modules: false,
-        chunkModules: false
+        chunkModules: false,
       });
 
       let elapsedTime = Math.round(statistics.time / 10) / 100;
 
       if (singleRun) {
         cb();
-      }
-      else {
+      } else {
         if (firstRun) {
           cb();
           firstRun = false;
-        }
-        else {
+        } else {
           util.log(`webpack:build ${elapsedTime} s`);
 
           callback(
@@ -44,9 +42,8 @@ module.exports = function(singleRun, callback) {
 
     if (singleRun) {
       webpackBuild.run(callbackOnBuild);
-    }
-    else {
+    } else {
       webpackBuild.watch({ aggregateTimeout: 100 }, callbackOnBuild);
     }
-  }
+  };
 };

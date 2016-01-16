@@ -8,7 +8,7 @@ module.exports = function() {
   return function() {
     return gulp.src(['e2e/**/*.spec.js'])
       .pipe(protractor({
-        configFile: configPath
+        configFile: configPath,
       }));
   };
 };

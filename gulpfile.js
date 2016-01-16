@@ -34,21 +34,21 @@ gulp.task('serve', function(done) {
     ['client-build', 'client-copy', 'livereload'],
     'server-start',
     done
-  )
+  );
 });
 
 gulp.task('test', function(done) {
   runSequence(
     'client-test',
     done
-  )
+  );
 });
 
 gulp.task('test-dev', function(done) {
   runSequence(
     'client-test-dev',
     done
-  )
+  );
 });
 
 gulp.task('test-e2e', protractorTask());

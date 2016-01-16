@@ -13,7 +13,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      {pattern: '../../client/setup.spec.js'}
+      { pattern: '../../client/setup.spec.js' },
     ],
 
     // list of files to exclude
@@ -23,7 +23,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      '../../client/setup.spec.js': ['webpack', 'sourcemap']
+      '../../client/setup.spec.js': ['webpack', 'sourcemap'],
     },
 
     // test results reporter to use
@@ -54,6 +54,6 @@ module.exports = function(config) {
     concurrency: Infinity,
 
     autoWatch: false,
-    singleRun: true
+    singleRun: true,
   });
 };

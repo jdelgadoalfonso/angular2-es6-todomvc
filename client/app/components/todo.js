@@ -30,11 +30,9 @@ export class Todo {
     let currentStatus = this._params.get('status');
     if (currentStatus == 'completed') {
       return this._todoStore.getCompleted();
-    }
-    else if (currentStatus == 'active') {
+    } else if (currentStatus == 'active') {
       return this._todoStore.getRemaining();
-    }
-    else {
+    } else {
       return this._todoStore.todos;
     }
   }

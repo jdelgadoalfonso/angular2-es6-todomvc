@@ -5,7 +5,7 @@ import todoHeaderTemplate from './todo_header.html';
 
 @Component({
   selector: 'todo-header',
-  template: todoHeaderTemplate
+  template: todoHeaderTemplate,
 })
 export class TodoHeader {
   newTodo = '';
